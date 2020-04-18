@@ -7,6 +7,13 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let g:seiya_target_groups = get(g:, 'seiya_target_groups', ['ctermbg'])
+let g:seiya_target_highlights = get(g:, 'seiya_target_highlights', [
+      \ 'Normal',
+      \ 'LineNr',
+      \ 'SignColumn',
+      \ 'VertSplit',
+      \ 'NonText',
+      \])
 
 function! s:clear_bg(hl)
   for group in g:seiya_target_groups
@@ -15,12 +22,9 @@ function! s:clear_bg(hl)
 endfunction
 
 function! s:clear_bg_all()
-  call s:clear_bg('Normal')
-  call s:clear_bg('LineNr')
-  " call s:clear_bg('Folded')
-  call s:clear_bg('SignColumn')
-  call s:clear_bg('VertSplit')
-  call s:clear_bg('NonText')
+  for hl in g:seiya_target_highlights
+    call s:clear_bg(hl)
+  endfor
 endfunction
 
 function! s:clear_auto()

@@ -10,6 +10,7 @@ let g:seiya_target_groups = get(g:, 'seiya_target_groups', ['ctermbg'])
 let g:seiya_target_highlights = get(g:, 'seiya_target_highlights', [
       \ 'Normal',
       \ 'LineNr',
+      \ 'CursorLineNr',
       \ 'SignColumn',
       \ 'VertSplit',
       \ 'NonText',
